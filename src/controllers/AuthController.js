@@ -16,7 +16,10 @@ module.exports = {
       const user = await User.create({ name, email, password })
 
       user.password = undefined
-      return response.status(201).json({ user })
+
+      const token = jwt.sign({ id: user._id }, auth_config.secret, { expiresIn: 43200 })
+
+      return response.status(201).json({ user, token })
     } catch (error) {
       
       return response.status(500).json({ error: `woops` })
