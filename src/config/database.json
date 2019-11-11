@@ -1,0 +1,6 @@
+{
+  "connection": {
+    "local": "mongodb://localhost:27017/postcomm",
+    "cloud": "mongodb+srv://gmendes0:1xhaH4xLJYDLU2ND@postcomm-zbymf.mongodb.net/test?retryWrites=true&w=majority"
+  }
+}

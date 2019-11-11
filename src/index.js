@@ -2,10 +2,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
 const cors = require('cors')
+const database = require('./config/database')
 
 const app = express()
 
-mongoose.connect('mongodb://localhost:27017/postcomm', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(database.connection.cloud, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(express.json())
 app.use(cors())
